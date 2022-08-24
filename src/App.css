@@ -1,4 +1,35 @@
-.App {
+header {
+  background-color: #1b272e;
+  height: 130px;
+}
+
+.logo {
+  height: 110px;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btnNavBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 150px;
+}
+
+.btnNav {
+  color: white;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -36,3 +67,4 @@
     transform: rotate(360deg);
   }
 }
+ */
