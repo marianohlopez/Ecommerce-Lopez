@@ -1,5 +1,6 @@
 import './App.css';
-import NavBar from './components/navBar.js';
+import NavBar from './components/navBar/NavBar.js';
+import ItemListContainer from './components/itemListContainer/ItemListContainer';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <header className="App-header">
         <NavBar/>
       </header>
+      <ItemListContainer greeting={'Hola'}/>
     </div>
   );
 }

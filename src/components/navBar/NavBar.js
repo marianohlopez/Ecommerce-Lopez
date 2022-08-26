@@ -1,9 +1,11 @@
-import '../App.css';
+import './style.css';
+import logo from './logo.png';
+import CartWidget from '../cartWidget/CartWidget';
 
-function NavBar() {
+const NavBar = () => {
     return (
         <nav className='navBar'>
-            <a href="../../public/index.html"><img className="logo" src={require("../img/logo.png")}
+            <a href="../../public/index.html"><img className="logo" src={logo}
                 alt="Logo de empresa"/></a>
             <ul className="btnNavBar">
                 <li>
@@ -13,6 +15,7 @@ function NavBar() {
                     <a className="btnNav" href="../pages/productos.html">Productos</a>
                 </li>
             </ul>
+            <CartWidget/>
         </nav>
     );
 }
