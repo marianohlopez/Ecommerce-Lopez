@@ -1,7 +1,14 @@
 import './style.css';
+import ItemCount from '../itemCount/ItemCount.js';
 
 const ItemListContainer = ({greeting}) => {
-    return (<h1>{greeting}</h1>);
+    const stock = 10;
+    return (
+        <>
+        <h1>{greeting}</h1>
+        <ItemCount stock={stock}/>
+        </>
+    );
 }
 
 export default ItemListContainer;
