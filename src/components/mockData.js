@@ -4,6 +4,12 @@ const data = [
         title: 'Fender Stratocaster Professional',
         price: '$1800',
         image: 'https://http2.mlstatic.com/D_NQ_NP_907526-MLA43530120179_092020-W.jpg',
+        trademark: 'Fender',
+        line: 'Stratocaster',
+        model: 'Professional',
+        year: '2017',
+        made: 'USA',
+        color: 'Sunburst'
     },
     {
         id: '2', 

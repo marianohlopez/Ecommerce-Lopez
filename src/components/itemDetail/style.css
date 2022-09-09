@@ -1,0 +1,23 @@
+.listDescription li {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin: 10px;
+    font-size: 1.2em;
+}
+
+.title {
+    margin: 10px;
+}
+
+.descriptionCont {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 15px;
+    border: 1px solid #1b272e;
+    width: 800px;
+}
+
+.imgDetail {
+    width: 400px;
+}
