@@ -1,31 +1,33 @@
-header {
-    background-color: #1b272e;
-    height: 130px;
-  }
+.logo {
+  height: 110px;
+}
   
-  .logo {
-    height: 110px;
-  }
+.navBar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #1b272e;
+  height: 130px;
+}
   
-  .navBar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
+.btnNavBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 250px;
+}
+
+.btnNavActive {
+  color: red;
+  text-decoration: none;
+}
   
-  .btnNavBar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 150px;
-  }
+.btnNav {
+  color: white;
+  text-decoration: none;
+}
   
-  .btnNav {
-    color: white;
-    text-decoration: none;
-  }
-  
-  li {
-    list-style: none;
-  }
+li {
+  list-style: none;
+}
 

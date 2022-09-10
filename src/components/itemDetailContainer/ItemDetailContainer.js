@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ItemDetail from "../itemDetail/ItemDetail.js";
 import data from "../mockData.js";
 
 const ItemDetailContainer = () => {
 
     const [itemDetail, setItemDetail] = useState([])
+
+    const { id } = useParams();
 
     useEffect(() => {
         getItem.then((response) => {
@@ -15,14 +18,13 @@ const ItemDetailContainer = () => {
 
     const getItem = new Promise((resolve) => {
         setTimeout(() => {
-            resolve(data.find(el => el.id ==='1'));
+            resolve(data.find(el => el.id === id));
         },2000);
     })
 
     return (
         <>
-            <ItemDetail 
-            lista = {itemDetail} />
+            {itemDetail && <ItemDetail lista = {itemDetail} />}
         </>
     )
 }
