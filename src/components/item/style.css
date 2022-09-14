@@ -1,6 +1,9 @@
 .imgProduct {
    /*  width: 200px; */
-    height: 150px;
+    /* height: 150px; */
+    /* min-height: 150px; */
+    height: 70%;
+    width: 70%;
 }
 
 .card {
@@ -12,4 +15,12 @@
     flex-direction: column;
     align-items: center;
     width: 300px;
+    height: 200px;
+}
+
+.priceTitle {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 90%;
 }

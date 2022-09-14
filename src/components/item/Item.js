@@ -4,9 +4,9 @@ const Item = ({title, price, image}) => {
     return (
     <div className='card'>
         <img className="imgProduct" src={image} alt={title}/>
-        <div>
+        <div className='priceTitle'>
         <h3>{price}</h3>
-        <h3>{title}</h3>
+        <h4>{title}</h4>
         </div>
     </div>);
 };

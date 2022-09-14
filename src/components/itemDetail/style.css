@@ -11,7 +11,7 @@
 
 .descriptionCont {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     background-color: white;
     border-radius: 15px;
     border: 1px solid #1b272e;
@@ -20,4 +20,18 @@
 
 .imgDetail {
     width: 400px;
+}
+
+.bntAgregar {
+    margin: 5px;
+    color: white;
+    background-color: #1b272e;
+    height: 30px;
+    width: 160px;
+    font-size: 15px;
+    text-align: center;
+    border: solid 2px #1b272e;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
 }

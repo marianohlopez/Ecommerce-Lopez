@@ -1,5 +1,4 @@
 import './style.css';
-import ItemCount from '../itemCount/ItemCount.js';
 import ItemList from '../itemList/ItemList.js';
 import data from '../mockData.js';
 import { useEffect, useState } from 'react';
@@ -8,7 +7,7 @@ import { useParams } from 'react-router-dom';
 const ItemListContainer = () => {
     const [productList, setProductList] = useState([]);
     const { categoryName } = useParams();
-
+    console.log(categoryName);
     useEffect(() => {
         getProducts.then((response) => {
             setProductList(response);
@@ -30,11 +29,9 @@ const ItemListContainer = () => {
         }
     });
     
-    const stock = 10;
     return (
         <>
             <ItemList lista = {productList} />
-            <ItemCount stock={stock} />
         </>
     );
 }

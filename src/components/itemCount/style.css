@@ -1,21 +1,15 @@
-.counter {
+.counterContainer {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 150px;
-    background-color: gray;
-    border-radius: 10px;
-    border: solid 2px #1b272e;
-
+    padding: 5px;
 }
 
 .counterInput {
+    margin: 5px;
     background-color: white;
-    height: 30px;
-    width: 150px;
-    font-size: 20px;
+    height: 25px;
+    width: 130px;
+    font-size: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,19 +19,8 @@
 
 .btnCounter {
     cursor: pointer;
-    font-size: 30px;
+    font-size: 25px;
     color: blue;
 }
 
-.bntAgregar {
-    margin-top: 25px;
-    background-color: white;
-    height: 30px;
-    width: 150px;
-    font-size: 12px;
-    text-align: center;
-    border: solid 2px #1b272e;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-}
+

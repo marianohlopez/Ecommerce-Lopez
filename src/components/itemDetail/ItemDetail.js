@@ -1,7 +1,18 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import ItemCount from '../itemCount/ItemCount';
 import './style.css';
 
 const ItemDetail = ({lista}) => {
 
+    const [initial, setInitial] = useState(0)
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        console.log(initial);
+        navigate('/cart');
+    }
     return (
         <div className='descriptionCont'>
             <img className="imgDetail" src={lista.image} alt={lista.title}/>
@@ -16,6 +27,8 @@ const ItemDetail = ({lista}) => {
                     <li>Origen: {lista.made}</li>
                     <li>Color: {lista.color}</li>
                 </ul>
+                <ItemCount stock={lista.stock} setInitial={setInitial} initial={initial} />
+                <button className="bntAgregar" onClick={handleClick}>Agregar al carrito</button>
             </div>
         </div>
     )

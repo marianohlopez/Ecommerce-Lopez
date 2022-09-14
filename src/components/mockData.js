@@ -10,7 +10,8 @@ const data = [
         year: '2017',
         made: 'USA',
         color: 'Sunburst',
-        category: 'Guitarra'
+        category: 'Guitarra',
+        stock: 10
     },
     {
         id: '2', 
@@ -23,7 +24,8 @@ const data = [
         year: '2020',
         made: 'USA',
         color: 'Cherry',
-        category: 'Guitarra'
+        category: 'Guitarra',
+        stock: 10
     },
     {
         id: '3', 
@@ -36,7 +38,8 @@ const data = [
         year: '2015',
         made: 'Japan',
         color: 'Negro',
-        category: 'Piano'
+        category: 'Piano',
+        stock: 5
     },
     {
         id: '4', 
@@ -49,7 +52,8 @@ const data = [
         year: '2016',
         made: 'Japan',
         color: 'Negro',
-        category: 'Piano'
+        category: 'Piano',
+        stock: 5
     },
 ]
 
