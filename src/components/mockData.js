@@ -30,7 +30,7 @@ const data = [
     {
         id: '3', 
         title: 'Yamaha P-125',
-        price: '$800',
+        price: '$1000',
         image: 'http://d2r9epyceweg5n.cloudfront.net/stores/001/631/795/products/sin-titulo51-fed18e0a51f74b41f916195572499710-640-0.png',
         trademark: 'Yamaha',
         line: 'P',

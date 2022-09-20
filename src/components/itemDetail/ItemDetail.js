@@ -1,34 +1,38 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 import ItemCount from '../itemCount/ItemCount';
 import './style.css';
 
-const ItemDetail = ({lista}) => {
+const ItemDetail =({product}) => {
 
-    const [initial, setInitial] = useState(0)
+    const [initial, setInitial] = useState(1)
 
     const navigate = useNavigate();
 
-    const handleClick = () => {
-        console.log(initial);
+    const { addToCart } = useContext(CartContext);
+
+    const onAdd = (item) => {
+        addToCart(item, initial);
         navigate('/cart');
     }
+
     return (
         <div className='descriptionCont'>
-            <img className="imgDetail" src={lista.image} alt={lista.title}/>
+            <img className="imgDetail" src={product.image} alt={product.title}/>
             <div>
-                <h3 className='title'>{lista.title}</h3>
-                <h3 className='title'>{lista.price}</h3>
+                <h3 className='title'>{product.title}</h3>
+                <h3 className='title'>{product.price}</h3>
                 <ul className='listDescription'>
-                    <li>Marca: {lista.trademark}</li>
-                    <li>Linea: {lista.line}</li>
-                    <li>Modelo: {lista.model}</li>
-                    <li>Año de fabricación: {lista.year}</li>
-                    <li>Origen: {lista.made}</li>
-                    <li>Color: {lista.color}</li>
+                    <li>Marca: {product.trademark}</li>
+                    <li>Linea: {product.line}</li>
+                    <li>Modelo: {product.model}</li>
+                    <li>Año de fabricación: {product.year}</li>
+                    <li>Origen: {product.made}</li>
+                    <li>Color: {product.color}</li>
                 </ul>
-                <ItemCount stock={lista.stock} setInitial={setInitial} initial={initial} />
-                <button className="bntAgregar" onClick={handleClick}>Agregar al carrito</button>
+                <ItemCount stock={product.stock} initial={initial} setInitial={setInitial} />
+                <button className="bntAgregar" onClick={()=>onAdd(product)}>Agregar al carrito</button>
             </div>
         </div>
     )

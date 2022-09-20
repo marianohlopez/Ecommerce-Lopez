@@ -7,7 +7,7 @@ const ItemCount = ({stock, initial, setInitial}) => {
     }
 
     const Remove = () => {
-        initial > 0 ? setInitial(initial - 1) : isDisabled();
+        initial > 1 ? setInitial(initial - 1) : isDisabled();
     }
     
     return (
