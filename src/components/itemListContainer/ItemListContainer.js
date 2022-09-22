@@ -30,7 +30,7 @@ const ItemListContainer = () => {
     
     return (
         <>
-            <ItemList lista = {productList} />
+            {productList == false ? <h2>Cargando...</h2> : <ItemList list = {productList} />}
         </>
     );
 }

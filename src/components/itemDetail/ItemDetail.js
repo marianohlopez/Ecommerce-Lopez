@@ -1,20 +1,16 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import ItemCount from '../itemCount/ItemCount';
 import './style.css';
 
 const ItemDetail =({product}) => {
 
-    const [initial, setInitial] = useState(1)
-
-    const navigate = useNavigate();
+    const [initial, setInitial] = useState(0)
 
     const { addToCart } = useContext(CartContext);
 
     const onAdd = (item) => {
         addToCart(item, initial);
-        navigate('/cart');
     }
 
     return (
@@ -22,7 +18,7 @@ const ItemDetail =({product}) => {
             <img className="imgDetail" src={product.image} alt={product.title}/>
             <div>
                 <h3 className='title'>{product.title}</h3>
-                <h3 className='title'>{product.price}</h3>
+                <h3 className='title'>${product.price}</h3>
                 <ul className='listDescription'>
                     <li>Marca: {product.trademark}</li>
                     <li>Linea: {product.line}</li>
@@ -33,6 +29,7 @@ const ItemDetail =({product}) => {
                 </ul>
                 <ItemCount stock={product.stock} initial={initial} setInitial={setInitial} />
                 <button className="bntAgregar" onClick={()=>onAdd(product)}>Agregar al carrito</button>
+                <button className={initial ? 'bntAgregar' : 'inactiveFinish'}>Finalizar Compra</button>
             </div>
         </div>
     )

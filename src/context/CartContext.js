@@ -13,24 +13,27 @@ export const CartProvider = ({children}) => {
             setCart([...cart, {...item, quantity}]);
         }
     };
-
+    
     const isInCart = (id) => {
         return cart.some((element) => element.id === id)
     };
 
-    const removeItem = (product) => {
-        let index = cart.findIndex(item => item.id === product.id);
+    const removeItem = (id) => {
+        let index = cart.findIndex(item => item.id === id);
         cart.splice(index, 1);
-        console.log(cart);
-    }
+        setCart([...cart]);
+    };
+
     const clear = () => {
         setCart([]);
     };
 
-    console.log(cart);
+    const totalAmount = () => {
+        return cart.reduce((accumulator, element) => accumulator + element.price * element.quantity, 0);    
+    };
 
     return(
-        <CartContext.Provider value={{cart, addToCart, clear, removeItem}}>
+        <CartContext.Provider value={{cart, addToCart, clear, removeItem, totalAmount}}>
             {children}
         </CartContext.Provider>
     );

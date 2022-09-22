@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.imgCart {
+    width: 100px;
+}
+
+.contProduct {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid black;
+    margin: 15px 0px 15px 0px ;
+}
+
+.contCart {
+    background-color: white;
+    width: 60%;
+    border-radius: 20px;
+    border: 2px solid #1b272e;
+    margin: 30px 0px 30px 0px;
+}
+
+.cardTitle {
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.noProduct {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.total {
+    padding-right: 15%;
+}
+
+.bntEliminate {
+    margin: 5px;
+    color: white;
+    background-color: #1b272e;
+    height: 25px;
+    width: 120px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.backLink {
+    text-decoration: none;
+    color: #1b272e;
+    margin: 20px;
+    font-weight: bold;
+}
+
+.contBtnElim {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
