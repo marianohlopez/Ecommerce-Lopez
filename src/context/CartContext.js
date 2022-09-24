@@ -23,6 +23,7 @@ export const CartProvider = ({children}) => {
         cart.splice(index, 1);
         setCart([...cart]);
     };
+    console.log(cart);
 
     const clear = () => {
         setCart([]);

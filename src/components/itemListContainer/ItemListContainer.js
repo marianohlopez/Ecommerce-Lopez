@@ -1,32 +1,43 @@
 import './style.css';
 import ItemList from '../itemList/ItemList.js';
-import data from '../mockData.js';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs, getFirestore, where, query } from 'firebase/firestore';
 
 const ItemListContainer = () => {
+
     const [productList, setProductList] = useState([]);
+
     const { categoryName } = useParams();
-    useEffect(() => {
-        getProducts.then((response) => {
-            setProductList(response);
-        })
-        .catch((error) => console.log(error));
-    }, [categoryName])
-    
-    const getProducts = new Promise((resolve, reject) => {
-        if(categoryName) {
-            setTimeout(() => {
-                resolve(data.filter((item) => item.category === categoryName));
-                reject("hubo un error")
-            }, 2000);
+
+    const getProducts = async () => {
+        const db = getFirestore();
+        const querySnapshot = collection(db, 'items');
+
+        if(categoryName){
+            const queryFilter = query(
+                querySnapshot, where("category", "==", categoryName));
+            getDocs(queryFilter).then((response) => {
+                const data = response.docs.map((doc) => {
+                    return {id: doc.id, ...doc.data()};
+                });
+                setProductList(data);
+            })
+            .catch((error) => console.log(error));
         }else{
-            setTimeout(() => {
-                resolve(data);
-                reject("hubo un error")
-            }, 2000);
-        }
-    });
+            getDocs(querySnapshot).then((response) => {
+                const data = response.docs.map((doc) => {
+                    return {id: doc.id, ...doc.data()};
+                });
+                setProductList(data);
+            })
+            .catch((error) => console.log(error));
+        };
+    };
+
+    useEffect(() => {
+        getProducts()
+    }, [categoryName])
     
     return (
         <>

@@ -29,7 +29,7 @@ const ItemDetail =({product}) => {
                 </ul>
                 <ItemCount stock={product.stock} initial={initial} setInitial={setInitial} />
                 <button className="bntAgregar" onClick={()=>onAdd(product)}>Agregar al carrito</button>
-                <button className={initial ? 'bntAgregar' : 'inactiveFinish'}>Finalizar Compra</button>
+                <button className={initial ? 'bntAgregar' : 'inactiveFinish'}>Finalizar Compra</button> 
             </div>
         </div>
     )
