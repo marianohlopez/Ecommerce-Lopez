@@ -11,6 +11,7 @@ export const CartProvider = ({children}) => {
             return cart.find(element => element.id === item.id).quantity++;
         }else{
             setCart([...cart, {...item, quantity}]);
+            console.log(cart.id);
         }
     };
     

@@ -58,8 +58,28 @@
     font-weight: bold;
 }
 
-.contBtnElim {
+.contButtons {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.btnConfirm {
+    margin: 5px;
+    color: white;
+    background-color: rgb(13, 186, 255);
+    height: 32px;
+    width: 150px;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contConfirm {
+    width: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
