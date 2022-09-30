@@ -8,10 +8,9 @@ export const CartProvider = ({children}) => {
 
     const addToCart = (item, quantity) => {
         if(isInCart(item.id)){
-            return cart.find(element => element.id === item.id).quantity++;
+            return cart.find(element => element.id === item.id).quantity + quantity;
         }else{
             setCart([...cart, {...item, quantity}]);
-            console.log(cart.id);
         }
     };
     
@@ -24,7 +23,6 @@ export const CartProvider = ({children}) => {
         cart.splice(index, 1);
         setCart([...cart]);
     };
-    console.log(cart);
 
     const clear = () => {
         setCart([]);

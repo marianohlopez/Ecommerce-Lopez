@@ -1,31 +1,59 @@
 import './style.css';
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { collection, addDoc, getFirestore, updateDoc, doc} from 'firebase/firestore';
 import moment from 'moment';
 
 const Cart = () => {
     const { cart, clear, removeItem, totalAmount } = useContext(CartContext);
+    const navigate = useNavigate();
+    const order ={
+        buyer: {
+            name: 'Mariano',
+            phone: 45887546,
+            email: 'test@gmail.com'
+        },
+        items: cart,
+        total: totalAmount(),
+        date: moment().format('DD/MM/YYYY, h:mm:ss a'),
+    }
+
+    const db = getFirestore();
 
     const createOrder = () => {
-        const db = getFirestore();
-        const order = {
-            buyer: {
-                name: 'Mariano',
-                phone: 45887546,
-                email: 'test@gmail.com'
-            },
-            items: cart,
-            total: totalAmount(),
-            date: moment().format(),
-        };
         const query = collection(db, 'orders');
         addDoc(query, order)
         .then((response) => {
             console.log(response);
+            updateStockitem();
             alert('Felicidades por tu compra')})
         .catch(() => alert('Tu compra no pudo ser completada'))
+    };
+
+    const updateStockitem = () => {
+        cart.forEach((product) => {
+            const queryUpdate = doc(db, 'items', product.id);
+            updateDoc(queryUpdate, {
+                title: product.title,
+                category: product.category,
+                color: product.color,
+                line: product.line,
+                model: product.model,
+                year: product.year,
+                stock: product.stock - product.quantity,
+                price: product.price,
+            })
+            .then(() => {
+                if (cart[cart.length - 1].id === product.id){
+                    clear();
+                    navigate('/');
+                }
+            })
+            .catch(() => {
+                console.log(('error al actualizar stock'));
+            })
+        })
     };
 
     return(
