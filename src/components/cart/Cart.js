@@ -110,7 +110,7 @@ const Cart = () => {
                             </div>
                         ))}
                         <div className='contButtons'>
-                            <button className="bntEliminate" onClick={()=>clear()}>Vaciar carrito</button>
+                            <button className="bntClear" onClick={()=>clear()}>Vaciar carrito</button>
                             <div className='contConfirm'>
                                 <h3 className='total'>Total: ${totalAmount()}</h3>
                                 <button onClick={createOrder} className="btnConfirm">Confirmar Compra</button>

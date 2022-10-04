@@ -36,6 +36,7 @@
 
 .imgDetail {
     width: 50%;
+    margin: 20px;
 }
 
 .bntAgregar {
@@ -43,8 +44,8 @@
     color: white;
     background-color: #1b272e;
     height: 30px;
-    width: 160px;
-    font-size: 15px;
+    width: 130px;
+    font-size: 13px;
     text-align: center;
     border: solid 2px #1b272e;
     border-radius: 10px;
@@ -55,3 +56,38 @@
 .inactiveFinish {
     display: none;
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1023px) {
+
+    .descriptionCont {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .listDescriptionCont {
+        width: 70%;
+    }
+}
+
+@media (max-width: 625px) {
+    .imgDetail {
+        width: 60%;
+    }
+
+    .productTitle {
+        font-size: 22px;
+    }
+
+    .priceTitle {
+        font-size: 17px;
+    }
+
+    .listDescription {
+        font-size: 15px;
+    }
+}
+

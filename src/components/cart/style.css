@@ -4,7 +4,7 @@
 }
 
 .imgCart {
-    width: 100px;
+    width: 10%;
 }
 
 .contProduct {
@@ -52,6 +52,18 @@
     color: white;
     background-color: #1b272e;
     height: 25px;
+    width: 20%;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.bntClear {
+    margin: 5px;
+    color: white;
+    background-color: #1b272e;
+    height: 25px;
     width: 120px;
     font-size: 14px;
     text-align: center;
@@ -64,6 +76,10 @@
     color: #1b272e;
     margin: 20px;
     font-weight: bold;
+}
+
+.backLink:hover {
+    color: red
 }
 
 .contButtons {
@@ -101,4 +117,43 @@
 .labelCont {
     display: flex;
     flex-direction: column;
+    width: 40%;
+}
+
+@media (max-width: 1023px) {
+    .formCont {
+        flex-direction: column;
+    }
+    .labelCont {
+        width: 60%;
+    }
+
+    .contProduct h3 {
+        font-size: 12px;
+    }
+
+    .contProduct h4 {
+        font-size: 11px;
+    }
+
+    .bntEliminate {
+        margin: 3px;
+        height: 20px;
+        font-size: 11px;
+    }
+
+    .bntClear {
+        font-size: 12px;
+    }
+
+    .btnConfirm {
+        margin: 3px;
+        height: 27px;
+        width: 120px;
+        font-size: 11px;
+    }
+
+    .total {
+        font-size: 13px;
+    }
 }
