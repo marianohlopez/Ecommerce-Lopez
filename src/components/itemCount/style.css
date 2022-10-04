@@ -4,6 +4,10 @@
     padding: 5px;
 }
 
+.counterContainer p {
+    padding-top: 10px;
+}
+
 .counterInput {
     margin: 5px;
     background-color: white;

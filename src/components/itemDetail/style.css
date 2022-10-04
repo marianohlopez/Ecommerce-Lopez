@@ -1,11 +1,26 @@
+.contDetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listDescriptionCont {
+    width: 40%;
+}
+
 .listDescription li {
     list-style-type: disc;
-    list-style-position: inside;
     margin: 10px;
     font-size: 1.2em;
 }
 
-.title {
+.productTitle {
+    font-size: 25px;
+    margin: 10px;
+
+}
+
+.priceTitle {
     margin: 10px;
 }
 
@@ -15,11 +30,12 @@
     background-color: white;
     border-radius: 15px;
     border: 1px solid #1b272e;
-    width: 800px;
+    width: 70%;
+    margin: 20px;
 }
 
 .imgDetail {
-    width: 400px;
+    width: 50%;
 }
 
 .bntAgregar {

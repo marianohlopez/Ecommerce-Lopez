@@ -2,7 +2,6 @@ import './style.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from './logo.png';
 import CartWidget from '../cartWidget/CartWidget';
 import { Link, NavLink } from 'react-router-dom';
@@ -27,7 +26,7 @@ const NavBar = () => {
                                 <NavLink className={({isActive}) => (isActive? 'btnNavActive' :  'btnNav')} to={'/category/Piano'}>Pianos</NavLink>
                             </li>
                             <li>
-                                <NavLink className={({isActive}) => (isActive? 'btnNavActive' :  'btnNav')} to={'/contact'}>Contacto</NavLink>
+                                <NavLink className={({isActive}) => (isActive? 'btnNavActive' :  'btnNav')} to={'/category/Bajos'}>Bajos</NavLink>
                             </li>
                         </ul>
                         <Link to={'/cart'}><CartWidget/></Link>

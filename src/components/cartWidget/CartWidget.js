@@ -5,15 +5,15 @@ import { useContext } from 'react';
 
 const CartWidget = () => {
 
-    const { cart } = useContext(CartContext);
+    const { cart, counterWidget } = useContext(CartContext);
 
     return (
         <>
-            {cart.length === 0 ? <></> : (
+            {cart.length === 0 ? '' : (
                 <>
                     <div className='cartWidgetCont'>
                         <img className='cart' alt='Cart' src={cartImage}/>
-                        <div className='cartNumber'>{cart.reduce((accumulator, element) => accumulator + element.quantity, 0)}</div>
+                        <div className='cartNumber'>{counterWidget()}</div>
                     </div>
                 </>   
             )}

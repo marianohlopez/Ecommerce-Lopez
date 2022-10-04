@@ -1,0 +1,12 @@
+footer {
+    height: 100px;
+    background-color: #1b272e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.footerTitle {
+    color: white;
+}

@@ -1,7 +1,4 @@
 .itemList {
-/*     display: flex;
-    flex-wrap: row wrap; */
-    /* padding: 10px; */
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -10,5 +7,9 @@
 
 .linkItem{
     text-decoration: none;
+    color: black;
+}
+
+.linkItem:hover {
     color: black;
 }

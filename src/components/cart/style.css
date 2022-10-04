@@ -11,8 +11,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-top: 1px solid black;
     margin: 15px 0px 15px 0px ;
+    border-bottom: 1px solid black;
 }
 
 .contCart {
@@ -24,9 +24,18 @@
 }
 
 .cardTitle {
+    margin-top: 30px;
     margin-bottom: 20px;
     text-align: center;
     text-decoration: underline;
+}
+
+.cardTitleForm {
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 20px;
+    font-style: italic;
 }
 
 .noProduct {
@@ -81,4 +90,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.formCont {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.labelCont {
+    display: flex;
+    flex-direction: column;
 }

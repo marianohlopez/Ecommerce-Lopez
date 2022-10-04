@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import Swal from "sweetalert2";
 
 export const CartContext = createContext([]);
 
@@ -8,20 +9,36 @@ export const CartProvider = ({children}) => {
 
     const addToCart = (item, quantity) => {
         if(isInCart(item.id)){
-            return cart.find(element => element.id === item.id).quantity + quantity;
+            Swal.fire({
+                title: `${item.title} ya está en el carrito`,
+                showConfirmButton: false,
+                timer: 2000
+            })
         }else{
             setCart([...cart, {...item, quantity}]);
+            Swal.fire({
+                title: `Se agrego ${item.title} al carrito`,
+                showConfirmButton: false,
+                timer: 2000
+            })
         }
     };
+
+    const counterWidget = () => {
+        return cart.reduce((accumulator, element) => accumulator + element.quantity, 0);
+    }
     
     const isInCart = (id) => {
         return cart.some((element) => element.id === id)
     };
 
-    const removeItem = (id) => {
-        let index = cart.findIndex(item => item.id === id);
-        cart.splice(index, 1);
-        setCart([...cart]);
+    const removeItem = (item) => {
+        setCart(cart.filter((product) => product.id !== item.id));
+        Swal.fire({
+            title: `Se eliminó ${item.title} del carrito`,
+            showConfirmButton: false,
+            timer: 2000
+        })
     };
 
     const clear = () => {
@@ -33,7 +50,7 @@ export const CartProvider = ({children}) => {
     };
 
     return(
-        <CartContext.Provider value={{cart, addToCart, clear, removeItem, totalAmount}}>
+        <CartContext.Provider value={{cart, setCart ,addToCart, clear, removeItem, totalAmount, counterWidget}}>
             {children}
         </CartContext.Provider>
     );
