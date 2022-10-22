@@ -9,8 +9,10 @@ export const CartProvider = ({children}) => {
 
     const addToCart = (item, quantity) => {
         if(isInCart(item.id)){
+            cart.find(product => product.id === item.id).quantity += quantity
+            setCart([...cart])
             Swal.fire({
-                title: `${item.title} ya está en el carrito`,
+                title: `Se agrego ${item.title} al carrito`,
                 showConfirmButton: false,
                 timer: 2000
             })
