@@ -12,10 +12,10 @@ const CartWidget = () => {
             {cart.length === 0 ? '' : (
                 <>
                     <div className='cartWidgetCont'>
-                        <img className='cart' alt='Cart' src={cartImage}/>
+                        <img className='cart' alt='Cart' src={cartImage} />
                         <div className='cartNumber'>{counterWidget()}</div>
                     </div>
-                </>   
+                </>
             )}
         </>
     );
